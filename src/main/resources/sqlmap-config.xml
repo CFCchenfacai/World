@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="db.properties"></properties>
+	<!-- 打印底层执行过程    默认是关闭的 -->
+	<settings>
+		<setting name="logImpl" value="STDOUT_LOGGING"/>
+	</settings>
+	
+	<!--设置类型的别名  -->
+	<typeAliases>
+		<typeAlias type="com.greenish_orchid.model.Movie" alias="movie"/>
+		<typeAlias type="com.greenish_orchid.model.Brand" alias="brand"/>
+	</typeAliases>
+	<!-- 引入插件 -->
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageHelper">
+			<property name="dialect" value="mysql"/>
+		</plugin>
+	</plugins>
+	
+	<!-- 加载sql映射文件 -->
+	<mappers>
+		<mapper resource="com/greenish_orchid/mapper/BrandMapper.xml"/>
+		<!-- <mapper class="com.greenish_orchid.dao.AnnotationStudentDao"/> -->
+	</mappers>
+</configuration> 
