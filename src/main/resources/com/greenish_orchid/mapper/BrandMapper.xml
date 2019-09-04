@@ -4,7 +4,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 空间名随意起 -->
 <mapper namespace="com.greenish_orchid.mapper.BrandMapper">
-	<!-- 列表 --><!-- 查看 -->
+	<!-- 列表 --><!-- 查看 --><!--sssss  -->
 	<select id="queryAllMovie" parameterType="map" resultType="movie">
 		select m.mid,m.mname,m.mdesc,m.mautor,GROUP_CONCAT(b.bname) bname,m.mdate
 		from movie m,mbrand b,movie_mbrand mb 
